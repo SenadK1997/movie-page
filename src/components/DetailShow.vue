@@ -45,25 +45,27 @@ export default {
       </svg>
       <button>Back</button>
     </div>
-    <section class="c-section">
-      <div class="c-section__title">
-        <img
-          :src="'https://image.tmdb.org/t/p/w500' + tvShow.backdrop_path"
-          alt="Error Loading Image"
-        />
-        <h1>{{ tvShow.name }}</h1>
-      </div>
-      <div class="c-section__overview">
-        <h2>Movie Overview :</h2>
-        <p>"{{ tvShow.overview }}"</p>
-      </div>
-    </section>
+    <div class="c-parent-section">
+      <section class="c-section">
+        <div class="c-section__title">
+          <img
+            :src="'https://image.tmdb.org/t/p/w500' + tvShow.backdrop_path"
+            alt="Error Loading Image"
+          />
+          <h1>{{ tvShow.name }}</h1>
+        </div>
+        <div class="c-section__overview">
+          <h2>Movie Overview :</h2>
+          <p>"{{ tvShow.overview }}"</p>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 <style scoped>
 .c-parent {
   width: 100%;
-  max-width: 1268px;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -80,16 +82,23 @@ export default {
   cursor: pointer;
 }
 .c-parent__btn button {
-  padding: 10px 20px;
-  border: 1px solid lightgrey;
-  background-color: transparent;
+  padding: 9px 14px;
+  background-color: #edede9;
+  border: none;
   cursor: pointer;
   font-size: 16px;
-  border: none;
-  border-radius: 15px;
+  box-shadow: 0px 0px 7px #d5bdaf;
+  border: 1px solid #cec2b7;
 }
 .c-parent__btn button:hover {
-  background-color: rgb(231, 231, 231);
+  background-color: #e3d5ca;
+}
+.c-parent-section {
+  display: flex;
+  max-width: 900px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 .c-section {
   display: flex;

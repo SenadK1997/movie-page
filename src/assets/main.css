@@ -4,7 +4,23 @@
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
+  background-color: #edede9;
+  height: 100vh;
 }
 body {
   width: 100%;
+  background-color: #edede9;
+}
+
+h1 {
+  color: #7c6e65 !important;
+}
+h2 {
+  color: #7c6e65 !important;
+}
+button {
+  color: #7c6e65;
+}
+p {
+  color: #7c6e65;
 }

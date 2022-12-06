@@ -1,6 +1,6 @@
 # movie-page
 
-This template should help get you started developing with Vue 3 in Vite.
+This is top 10 move & tv series Single Page Application (SPA) developed as a test assignment for Rubicon.
 
 ## Recommended IDE Setup
 

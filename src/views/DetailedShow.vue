@@ -1,4 +1,4 @@
-<script>
+<script lang="js">
 import DetailShow from "../components/DetailShow.vue";
 export default {
   name: "detailed-show",

@@ -47,13 +47,15 @@ export default {
   box-shadow: 0px 0px 15px lightgrey;
   margin-bottom: 50px;
   max-width: 600px;
+  border-radius: 5px;
 }
 .c-card h1 {
-  font-size: 32px;
+  font-size: 28px;
 }
 .c-card img {
   width: 600px;
   max-width: 100%;
   cursor: pointer;
+  border-radius: 5px;
 }
 </style>
