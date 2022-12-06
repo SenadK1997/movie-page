@@ -1,5 +1,6 @@
 <script>
 import axios from "axios";
+import TitleCard from "./TitleCard.vue";
 export default {
   name: "body-page",
   data() {
@@ -88,6 +89,7 @@ export default {
       return false;
     },
   },
+  components: { TitleCard },
 };
 </script>
 <template>
@@ -126,48 +128,30 @@ export default {
     </div>
     <section class="c-section__cards" v-if="!searchActive">
       <div v-if="moviesActive" class="c-section__parent">
-        <div class="c-section__card" v-for="movie in movies" :key="movie">
-          <img
-            :src="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path"
-            alt="Error loading image"
-            @click="detailedMovies(movie.id)"
-          />
-          <h1>{{ movie.title }}</h1>
-        </div>
+        <TitleCard
+          v-for="movie in movies"
+          :key="movie.id"
+          :title="movie"
+          :is-movie="true"
+        />
       </div>
       <div v-else-if="tvActive" class="c-section__parent">
-        <div class="c-section__card" v-for="tvShow in tvShows" :key="tvShow">
-          <img
-            :src="'https://image.tmdb.org/t/p/w500' + tvShow.backdrop_path"
-            alt="Error loading image"
-            @click="detailedShow(tvShow.id)"
-          />
-          <h1>{{ tvShow.name }}</h1>
-        </div>
+        <TitleCard
+          v-for="tvShow in tvShows"
+          :key="tvShow.id"
+          :title="tvShow"
+          :is-movie="false"
+        />
       </div>
     </section>
     <section v-else>
       <div class="c-section__parent">
-        <div
-          class="c-section__card"
+        <TitleCard
           v-for="searchedMovie in searchedMovies"
-          :key="searchedMovie"
-          @click="onGoDetail(searchedMovie)"
-        >
-          <img
-            :src="
-              'https://image.tmdb.org/t/p/w500' + searchedMovie.backdrop_path
-            "
-            alt="Error loading image"
-          />
-          <h1>
-            {{
-              searchedMovie.media_type === "movie"
-                ? searchedMovie.title
-                : searchedMovie.name
-            }}
-          </h1>
-        </div>
+          :key="searchedMovie.id"
+          :title="searchedMovie"
+          :is-movie="searchedMovie.media_type === 'movie'"
+        />
       </div>
     </section>
   </div>
